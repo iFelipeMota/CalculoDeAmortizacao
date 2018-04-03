@@ -17,24 +17,24 @@
          <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
          <%@include file="WEB-INF/jspf/menu.jspf" %>
         <h1>Amortização Constante</h1>
+        <div id="formulario">
         <form>
             Digite os dados exigidos
             <br>
             <br>
-            Valor do Empréstimo:    
-            <input type="text" name="vlEmprestimo"/>
+            
+            <input type="text" name="vlEmprestimo" placeholder="Valor do Empréstimo "/>
             <br>
-            Taxa de Juros Mensal:   
-            <input type="text" name="vlJuros"/>
+            <input type="text" name="vlJuros" placeholder="Taxa de Juros Mensal "/>
             <br>
-            Quantidade de Meses:    
-            <input type="text" name="qtMeses"/>
+            <input type="text" name="qtMeses" placeholder="Quantidade de meses "/>
             <br>
             <br>
             <input type="submit" value="Calcular"/>
             <br>
         </form>
-        <hr/>
+            </div>
+        
         
         <%
             String vlEmprestimo = request.getParameter("vlEmprestimo");
@@ -51,7 +51,8 @@
                     double saldoDevedor = emprestimo;
                     double juros;
         %>
-                    <table border="1">
+                    <div>
+                    <table id="res">
                         <tr>
                             <th>Período</th>
                             <th>Prestação</th>
@@ -83,7 +84,8 @@
                         </tr>
                             <%}%>
                     </table>
-                <%}catch(Exception e){}}%>
+                <%}catch(Exception e){}}%>               
     <%@include file="WEB-INF/jspf/rodape.jspf" %>
+    </div>
     </body>
 </html>
