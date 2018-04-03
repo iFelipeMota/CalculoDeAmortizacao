@@ -1,3 +1,6 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<h2>Hello World!</h2>
+
+<div id="footer">
+    <p>© 2018 - Desenvolvido por nós e Hospedado em localhost</p>    
+    </div>
