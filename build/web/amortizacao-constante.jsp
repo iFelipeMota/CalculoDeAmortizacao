@@ -10,10 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
         <title>Amortização Constante</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/menu.jspf" %>
+         <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
+         <%@include file="WEB-INF/jspf/menu.jspf" %>
         <h1>Amortização Constante</h1>
         <form>
             Digite os dados exigidos
@@ -82,5 +84,6 @@
                             <%}%>
                     </table>
                 <%}catch(Exception e){}}%>
+    <%@include file="WEB-INF/jspf/rodape.jspf" %>
     </body>
 </html>

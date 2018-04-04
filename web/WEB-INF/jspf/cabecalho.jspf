@@ -1,0 +1,15 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<%@ page pageEncoding="UTF-8" %>
+
+<%SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+    Calendar cal = Calendar.getInstance();%>
+                
+<table id="cabeca">
+    <tr>
+        <th><a href="http://www.fatecpg.com.br/default.aspx/" target="_blank"><img src="images/bannerFatec.jpg" align="left" alt="Logo fatec" /></a></th>
+        <th><%= "Praia Grande, " + df.format(cal.getTime())%></th>
+        <th><img src="images/amort01.jpeg" alt="" title="Amortizando" /></th>
+    </tr>
+</table>
