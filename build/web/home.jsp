@@ -18,10 +18,11 @@
         <h1>Cálculo de Amortização</h1>
         <h2>Esta aplicação apresentará o cálculo de amortização de juros segundo os métodos mais utulizados</h2>
         <h3>Componentes</h3>
-        <h4>André Luiz Martins</h4>
-        <h4>Fernando Costa Teixeira</h4>
-        <h4>Ivan Felipe Miranda da Mota</h4>
-        
+        <ul>
+        <li>André Luiz Martins</li>
+        <li>Fernando Costa Teixeira</li>
+        <li>Ivan Felipe Miranda da Mota</li>
+        </ul>
     <%@include file="WEB-INF/jspf/rodape.jspf" %>
     </body> 
 </html>

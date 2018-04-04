@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Amortização Americano</title>
         <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
-        <title>JSP Page</title>
+        <title>Amortização Americana</title>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
