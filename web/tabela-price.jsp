@@ -19,7 +19,8 @@
         <h1>Tabela Price</h1>
         <div id="formulario">
         <form>
-            Digite os dados exigidos
+            <br>
+            <h2>Digite os dados exigidos</h2>
             <br>
             <br>
             
@@ -51,7 +52,7 @@
                     double calculo = 0;
                     calculo = 1+juros;
                     double calcjuros=0;
-                    double amortizacaoConst = 0;
+                    double amort = 0;
                     double saldoDevedor = 0;
                     double jurosAtual = 0;                    
                     %>
@@ -80,18 +81,18 @@
                                 for(int i=1; i<=meses; i++) {
                                    
                                     calcjuros = valor * juros;
-                                    amortizacaoConst = pmt - calcjuros;
+                                    amort = pmt - calcjuros;
                                     jurosAtual= valor * juros;
-                                    saldoDevedor = valor - amortizacaoConst;
+                                    saldoDevedor = valor - amort;
                                     
                             %>
                             <th><%= i %></th>
                             <td><%= NumberFormat.getCurrencyInstance().format(pmt) %></td>
                             <td><%= NumberFormat.getCurrencyInstance().format(jurosAtual) %></td>
-                            <td><%= NumberFormat.getCurrencyInstance().format(amortizacaoConst) %></td>
+                            <td><%= NumberFormat.getCurrencyInstance().format(amort) %></td>
                             <td><%= NumberFormat.getCurrencyInstance().format(saldoDevedor) %></td>
                         </tr>
-                        <%valor = valor - amortizacaoConst;%>
+                        <%valor = valor - amort;%>
                             <%}%>
                     </table>
                 <%}catch(Exception e){}}%>               

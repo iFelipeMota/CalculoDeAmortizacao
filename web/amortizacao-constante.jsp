@@ -19,7 +19,8 @@
         <h1>Amortização Constante</h1>
         <div id="formulario">
         <form>
-            Digite os dados exigidos
+            <br>
+            <h2>Digite os dados exigidos</h2>
             <br>
             <br>
             

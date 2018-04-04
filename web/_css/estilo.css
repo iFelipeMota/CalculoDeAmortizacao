@@ -8,6 +8,12 @@ and open the template in the editor.
     Author     : André
 */
 
+* {
+    margin: 0px;
+    padding: 1px;
+}
+
+
 
 #cabeca{   
     width: 100%;    
@@ -23,6 +29,7 @@ th, td {
     padding: 0px;
     border-spacing: 0px;
     margin-left: 0px;
+    
 }
 
 .menu:hover {
@@ -30,12 +37,16 @@ th, td {
 }
 
 #footer {
-    background:linear-gradient(to top,red,white);
+    /*background:linear-gradient(to top,red,white);*/
     text-align: center;
     font-weight: bold;
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
+    width: 97%;
+    height: 60px;
+    clear: both;
+    position: relative;
+    padding: 15px;
+    
+   
 }
 
 input[type=text], select {
@@ -68,13 +79,49 @@ fomulario {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    margin: 0px 100px 100px 10px;
+    width: 50%;
+}
+
+#res {   
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+}
+
+#res td, #res th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#res tr:nth-child(even){background-color: #f2f2f2;}
+
+#res tr:hover {background-color: #ddd;}
+
+#res th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: red;
+    color: white;
+}
+    
+    
+    ul {    
+    margin: 0;
+    padding: 0;    
+    background-color: white;
+}
+
+li {
+    font-size: 35px;
+    color: #000000;
+    text-align: center;
+    padding: 16px;
+    text-decoration: underline;
     
 }
 
-#res {
-    right: 0px;
-    top: 0px;
-    margin: 0px 100px 100px 10px;   
+li:hover {
+    background-color: red;
 }
 

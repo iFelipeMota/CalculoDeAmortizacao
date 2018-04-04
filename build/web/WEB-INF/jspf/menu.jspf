@@ -1,4 +1,4 @@
-<div id="teste">
+<div>
     <a class="menu" href="home.jsp">Home</a>
 |   <a class="menu" href="amortizacao-constante.jsp">Amortização Constante</a>
 |   <a class="menu" href="amortizacao-americana.jsp">Amortização Americana</a>

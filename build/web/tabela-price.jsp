@@ -4,18 +4,99 @@
     Author     : ivanf
 --%>
 
+<%@page import="java.text.NumberFormat"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
-        <title>JSP Page</title>
+        <title>Tabela Price</title>
     </head>
     <body>
-       <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
-       <%@include file="WEB-INF/jspf/menu.jspf" %>
+         <%@include file="WEB-INF/jspf/cabecalho.jspf" %>
+         <%@include file="WEB-INF/jspf/menu.jspf" %>
         <h1>Tabela Price</h1>
-        <%@include file="WEB-INF/jspf/rodape.jspf" %>
+        <div id="formulario">
+        <form>
+            <br>
+            <h2>Digite os dados exigidos</h2>
+            <br>
+            <br>
+            
+            <input type="text" name="vlEmprestimo" placeholder="Valor do Empréstimo "/>
+            <br>
+            <input type="text" name="vlJuros" placeholder="Taxa de Juros Mensal "/>
+            <br>
+            <input type="text" name="qtMeses" placeholder="Quantidade de meses "/>
+            <br>
+            <br>
+            <input type="submit" value="Calcular"/>
+            <br>
+        </form>
+            </div>
+        
+        
+        <%
+            String vlEmprestimo = request.getParameter("vlEmprestimo");
+            String vlJuros = request.getParameter("vlJuros");
+            String qtMeses = request.getParameter("qtMeses");
+            
+            if((vlEmprestimo!="" && vlEmprestimo!=null)||(vlJuros!="" && vlJuros!=null)||(qtMeses!="" && qtMeses!=null)){
+                try{
+                    double valor = Double.parseDouble(vlEmprestimo);
+                    double juros = Double.parseDouble(vlJuros);
+                    int meses = Integer.parseInt(qtMeses);
+                    juros = juros/100;
+                    double pmt=0;
+                    double calculo = 0;
+                    calculo = 1+juros;
+                    double calcjuros=0;
+                    double amort = 0;
+                    double saldoDevedor = 0;
+                    double jurosAtual = 0;                    
+                    %>
+                    <div>
+                    <table id="res">
+                        <tr>
+                            <th>Período</th>
+                            <th>Prestação</th>
+                            <th>Juros</th>
+                            <th>Amortização</th>
+                            <th>Saldo Devedor</th>
+                        </tr>
+                        <tr>
+                            <th>0</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <%= NumberFormat.getCurrencyInstance().format(valor) %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <% 
+                                 pmt = valor * (juros/(1-(1/(Math.pow(calculo, meses)))));
+                            
+                                for(int i=1; i<=meses; i++) {
+                                   
+                                    calcjuros = valor * juros;
+                                    amort = pmt - calcjuros;
+                                    jurosAtual= valor * juros;
+                                    saldoDevedor = valor - amort;
+                                    
+                            %>
+                            <th><%= i %></th>
+                            <td><%= NumberFormat.getCurrencyInstance().format(pmt) %></td>
+                            <td><%= NumberFormat.getCurrencyInstance().format(jurosAtual) %></td>
+                            <td><%= NumberFormat.getCurrencyInstance().format(amort) %></td>
+                            <td><%= NumberFormat.getCurrencyInstance().format(saldoDevedor) %></td>
+                        </tr>
+                        <%valor = valor - amort;%>
+                            <%}%>
+                    </table>
+                <%}catch(Exception e){}}%>               
+    <%@include file="WEB-INF/jspf/rodape.jspf" %>
+    </div>
     </body>
 </html>
